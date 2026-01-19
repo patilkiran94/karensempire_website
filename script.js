@@ -1,4 +1,3 @@
-function showWish() {
-    const message = document.getElementById("wishMessage");
-    message.classList.remove("hidden");
-}
+document.querySelector('.btn').addEventListener('click', () => {
+    alert("Thank you for visiting my portfolio! ✨");
+});
