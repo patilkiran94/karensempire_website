@@ -1,24 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevOps Karen</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOpsKaren | Personal Website</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: radial-gradient(circle at top right, #1e1e3f, #05050a);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    header h2 {
+      color: #00e5ff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: #00e5ff; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 80px 60px;
+      min-height: 90vh;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
+    }
+
+    .hero-text span {
+      color: #00e5ff;
+    }
+
+    .hero-text p {
+      margin: 25px 0;
+      font-size: 1.2rem;
+      color: #cfd8dc;
+      max-width: 520px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background: linear-gradient(135deg, #00e5ff, #2979ff);
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(0,229,255,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover { transform: scale(1.05); }
+
+    /* HERO GRAPHIC */
+    .hero-graphic {
+      position: relative;
+      height: 380px;
+      width: 380px;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.25), transparent 60%);
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      animation: spin 18s linear infinite;
+    }
+
+    .icon {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background: #111;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #00e5ff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.5);
+    }
+
+    .icon.aws { top: -10px; left: 50%; transform: translateX(-50%); }
+    .icon.docker { right: -10px; top: 50%; transform: translateY(-50%); }
+    .icon.k8s { bottom: -10px; left: 50%; transform: translateX(-50%); }
+    .icon.cicd { left: -10px; top: 50%; transform: translateY(-50%); }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* SKILLS */
+    .skills {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .skills h2 {
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      color: #00e5ff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 18px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 35px rgba(0,229,255,0.6);
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #90a4ae;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-text { margin-bottom: 60px; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h
+<header>
+  <h2>DevOpsKaren</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hello, I'm <span>Karen</span></h1>
+    <p>DevOps Engineer focused on Cloud, CI/CD automation, Kubernetes, and building scalable production systems.</p>
+    <a class="btn" href="#">Get in Touch</a>
+  </div>
+
+  <div class="hero-graphic">
+    <div class="orbit">
+      <div class="icon aws">AWS</div>
+      <div class="icon docker">🐳</div>
+      <div class="icon k8s">K8s</div>
+      <div class="icon cicd">CI/CD</div>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Core Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">AWS • Azure • GCP</div>
+    <div class="skill-card">Docker • Kubernetes • Helm</div>
+    <div class="skill-card">Jenkins • GitHub Actions</div>
+    <div class="skill-card">Terraform • Ansible</div>
+    <div class="skill-card">Prometheus • Datadog</div>
+    <div class="skill-card">Linux • Bash • Python</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 DevOpsKaren · GitHub | LinkedIn
+</footer>
+
+<script>
+  // subtle hero glow animation
+  const hero = document.querySelector('.hero-graphic');
+  let glow = 0;
+  setInterval(() => {
+    glow = (glow + 1) % 360;
+    hero.style.filter = `drop-shadow(0 0 25px hsl(${glow}, 100%, 60%))`;
+  }, 80);
+</script>
+
+</body>
+</html>
